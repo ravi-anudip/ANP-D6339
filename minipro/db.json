@@ -1,0 +1,29 @@
+{
+  "tasks": [
+    {
+      "id": "2",
+      "title": "second task",
+      "status": "done",
+      "priority": "low"
+    },
+    {
+      "id": "3",
+      "title": "thired task ",
+      "status": "done",
+      "priority": "low"
+    },
+    {
+      "title": "dgdgdgd",
+      "status": "in-progress",
+      "priority": "high",
+      "id": "a2cNgkzV-7A"
+    },
+    {
+      "title": "my task",
+      "status": "done",
+      "priority": "low",
+      "id": "oKML9g3yuYs"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
