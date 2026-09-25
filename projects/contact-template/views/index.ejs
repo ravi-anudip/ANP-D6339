@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>My Contact</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela+Round">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/bootstrap.min.css" rel="stylesheet">
+    <link href="/custom.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <a class="navbar-brand text-uppercase" href="/">
+          <strong>Contact</strong> App
+        </a>
+      </div>
+    </nav>
+
+    <main class="py-5">
+      <div class="container">
+        <div class="row justify-content-md-center">
+          <div class="col-md-10">
+            <div class="card">
+              <div class="card-header card-title d-flex justify-content-between align-items-center">
+                <strong>Contact List</strong>
+                <a href="/add-contact" class="btn btn-sm btn-primary">+ Add Contact</a>
+              </div>
+              <div class="card-body">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>First Name</th>
+                      <th>Last Name</th>
+                      <th>Email</th>
+                      <th>Phone</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% if (contacts.length === 0) { %>
+                      <tr><td colspan="6" class="text-center">No contacts found</td></tr>
+                    <% } %>
+                    <% contacts.forEach(function(c, i) { %>
+                      <tr>
+                        <td><%= i + 1 %></td>
+                        <td><%= c.first_name %></td>
+                        <td><%= c.last_name %></td>
+                        <td><%= c.email %></td>
+                        <td><%= c.phone %></td>
+                        <td>
+                          <a href="/show-contact/<%= c.id %>" class="btn btn-sm btn-info">View</a>
+                          <a href="/update-contact/<%= c.id %>" class="btn btn-sm btn-warning">Edit</a>
+                          <a href="/delete-contact/<%= c.id %>" class="btn btn-sm btn-danger"
+                             onclick="return confirm('Delete this contact?')">Delete</a>
+                        </td>
+                      </tr>
+                    <% }); %>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
